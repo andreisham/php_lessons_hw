@@ -1,99 +1,19 @@
-<h2>Примеры с урока</h2>
-<?php
-echo "Hello, world!<br>";
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Уроки по PHP</title>
+</head>
+<body>
+    <h1>Уроки по PHP</h1>
+    <h2>Уроки</h2>
+    <a href="lessons/lesson_1.php">Lesson 1</a>
+    <a href="lessons/lesson_2.php">Lesson 2</a>
+    <h2>Домашки</h2>
+    <a href="homework/hw2.php">HW 2</a>
 
-// Переменная со строкой
-$user = "Andrey";
-echo "Hello, $user <br>";
-
-// Константы
-define('PI_CONST', 3.14);
-echo PI_CONST ;
-echo "<br>";
-
-// Переменные типа integer
-$int10 = 42;
-$int2 = 0b101010;
-$int8 = 052;
-$int16 = 0x2A;
-
-echo "Десятеричная система $int10 <br>";
-echo "Двоичная система $int2 <br>";
-echo "Восьмеричная система $int8 <br>";
-echo "Шестнадцатеричная система $int16 <br>";
-/*
-    на экран всегда выводится число 42,
-    а не то что я написал в переменной.
-    это потому что браузер или еще что то автоматом переводит
-    такие числа в десятичную систему для вывода?
-*/
-
-//Размер числа с плавающей точкой
-$precise1 = 1.5;
-$precise2 = 1.5e4; // тоже самое что 1.5 * 10^4
-$precise3 = 6E-8;
-echo "$precise1 | $precise2 | $precise3  <br>";
-
-// Конкатенация
-$a = 'Hello,';
-$b = 'world';
-$c = $a . $b;
-echo "$c <br>";
-
-// Математические операции
-$a = 4;
-$b = 5;
-echo $a + $b . '<br>';    // сложение
-echo $a * $b . '<br>';    // умножение
-echo $a - $b . '<br>';    // вычитание
-echo $a / $b . '<br>';  // деление
-echo $a % $b . '<br>'; // остаток от деления
-echo $a ** $b . '<br>'; // возведение в степень
-
-$a = 4;
-$b = 5;
-$a += $b;
-echo 'a = ' . $a;
-$a = 0;
-echo $a++;     // Постинкремент
-echo ++$a;    // Преинкремент
-echo $a--;     // Постдекремент
-echo --$a;    // Предекремент
-
-$a = 4;
-$b = 5;
-var_dump($a == $b);  // Сравнение по значению
-var_dump($a === $b); // Сравнение по значению и типу
-var_dump($a > $b);    // Больше
-var_dump($a < $b);    // Меньше
-var_dump($a <> $b);  // Не равно
-var_dump($a != $b);   // Не равно
-var_dump($a !== $b); // Не равно без приведения типов
-var_dump($a <= $b);  // Меньше или равно
-var_dump($a >= $b);  // Больше или равно
-?>
-
-<h2>Домашнее задание</h2>
-<?php
-echo "<p>3 пункт</p>";
-// 3 пункт
-$a = 5;
-$b = '05';
-var_dump($a == $b);  // Почему true?
-// Используется сравнение по значению.
-// Строка в переменной $b приводится к числу 5
-var_dump((int)'012345'); // Почему 12345?
-// У чисел все левые нули не влияют на значение, поэтому отбрасываются
-var_dump((float)123.0 === (int)123.0); // Почему false?
-// Потому что разный тип данных
-var_dump((int)0 === (int)'hello, world'); // Почему true?
-// Если строка начинается не с числового значения, то она дает "0"
-echo "<p>4 пункт</p>";
-
-$title = "Какой-то важный заголовок";
-$content = "Не менее важный текст"
-
-?>
-
-<h1><?php echo $title; ?> </h1>
-<p><?php echo $content; ?></p>
+</body>
+</html>
