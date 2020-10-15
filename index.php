@@ -8,12 +8,14 @@
     <title>Уроки по PHP</title>
 </head>
 <body>
-    <h1>Уроки по PHP</h1>
-    <h2>Уроки</h2>
-    <a href="lessons/lesson_1.php">Lesson 1</a>
-    <a href="lessons/lesson_2.php">Lesson 2</a>
-    <h2>Домашки</h2>
-    <a href="homework/hw2.php">HW 2</a>
+
+<h1>Уроки по PHP</h1>
+<h2>Уроки</h2>
+<a href="lessons/lesson_1.php">Lesson 1</a>
+<a href="lessons/lesson_2.php">Lesson 2</a>
+<h2>Домашки</h2>
+<a href="homework/hw2.php">HW 2</a>
+
 
 </body>
 </html>
