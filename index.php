@@ -14,8 +14,14 @@ while($string = fgets($f)) {
 fclose($f);
 
 drawMenu($menu);
-
-drawImg($img_dir) // функция в файле draw.php
+// функция должна быть в draw.php
+function drawImg(string $img_dir) {
+    $img = array_slice(scandir(ROOT_DIR . $img_dir),2); // оставляем в массиве только файлы (избавляемся от . и ..)
+    foreach ($img as $item){
+        echo "<a href=\"img/{$item}\" target=\"_blank\"><img src=\"img/{$item}\" alt=\"1\" ></a>";
+    }
+}
+drawImg($img_dir) //
 
 ?>
 
