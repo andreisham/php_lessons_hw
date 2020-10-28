@@ -1,24 +1,9 @@
 <?php
-/*
-function getFiles(string $directory): array {
-    return array_filter(
-        scandir($directory),
-        function ($item) use ($directory) {
-            return !is_dir($directory . "/" . $item);
-        }
-    );
+
+
+function uploadFile(string $name, $destination) {
+    if(isset($_FILES[$name]))
+    $tmpPath = $_FILES[$name]['tmp_name']; // взяли временное имя файла
+    $destination = IMG_DIR . $_FILES[$name]['name']; // указали куда его переместить
+    move_uploaded_file($tmpPath, $destination); // переместили в папку img
 }
-*/
-
-//$id = mysqli_escape_string($connection,$_GET['id']);
-//$sql = "select id, path from photos where id = '1'";
-//$res = mysqli_query($connection, $sql);
-//$file = mysqli_fetch_all($res, MYSQLI_ASSOC)[0]; // [id], [path]
-//var_dump($file);
-
-//function getFiles($connection, $id): array {
-//    $sql = "select id, path from photos where id = '1'";
-//    $res = mysqli_query($connection, $sql);
-//    $file = mysqli_fetch_all($res, MYSQLI_ASSOC)[0]; // [id], [path]
-//    return $file;
-//}

@@ -1,15 +1,15 @@
 <?php
-
-//2.1
 foreach ($images as $image):
     $imgUrl = "/img/{$image['path']}";
     ?>
-<!--2.2-->
-    <a href="/photo.php?id=<?=$image['id']?>" target="_blank">
+    <a href="/photo.php?id=<?=$image['id']?>">
         <img src="<?= $imgUrl ?>">
     </a>
 <? endforeach;?>
-
-
+<!--форма для загрузки файлов в галерею-->
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <input type="submit">
+</form>
 
 

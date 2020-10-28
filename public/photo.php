@@ -1,31 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../config/main.php";
+require_once ENGINE_DIR . "gallery.php";
+require_once ENGINE_DIR . "base.php";
 
-// ПЛАН
-/* так как скрипт пхп уже умер, делаем поновой
- * 1. получить ид из запроса
- * 2. подключиться к базе
- * 3. написать запрос на получение по айди данных фотографии
- * 4. выполнить запрос и сохранить данные в переменную
- * 5. подставить данные из переменной в верстку
- *
-*/
 
-// 1.
-$id = (int) $_GET['id']; // g
+$id = (int) get('id'); // реквест содержит и GET и POST
 
-// 2.
-$connection = mysqli_connect(
-    $config['host'],
-    $config['login'],
-    $config['password'],
-    $config['db']
-);
 
-// 3
-$sql = "select * from photos where id = {$id}";
-$res = mysqli_query($connection, $sql);
-$image = mysqli_fetch_all($res, MYSQLI_ASSOC)[0]; // [id], [path]
+
+$image = getGalleryImageByID($id);
+
+incrementImageViews($id);
 
 include VIEWS_DIR . "photo.php";
 ?>
