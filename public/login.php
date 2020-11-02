@@ -3,6 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '\..\config\main.php';
 require ENGINE_DIR . "base.php";
 require ENGINE_DIR . "db.php";
 
+
+// раскидать по файлам
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = post('login');
     $password = hashPassword(post('password'));
@@ -17,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($user = queryOne($sql)) {
         session_start();
         $_SESSION['user_id'] = $user['id'];
-        redirect('/');
+        $_SESSION['user_name'] = $login;
+        redirect('profile.php');
     } else {
         echo 'Вы не авторизованы';
     }

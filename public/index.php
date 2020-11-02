@@ -7,5 +7,5 @@ require_once VENDOR_DIR . "funcImgResize.php";
 $product_info = getCatalogInfo(); // получить информацию о товаре из бд
 
 include VIEWS_DIR . "catalog.php";
-?>
+
 

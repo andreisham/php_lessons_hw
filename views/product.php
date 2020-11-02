@@ -2,7 +2,11 @@
 <img src="/img/<?=$info['path'] ?>" alt="" width="400px">
 <p><?=$info['full_description']?></p>
 <p>Цена: <?=$info['price']?> руб.</p>
-В корзину
+<form action="/basket.php" method="post">
+    <input type="hidden" value="<?=$info['id'] ?>" name="id">
+    Количество: <input type="number" name="quantity">
+    <input type="submit" value="В корзину">
+</form>
 <a href="/index.php">Go back</a>
 
 <h2>Резцензии</h2>

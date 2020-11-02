@@ -1,5 +1,6 @@
 <a href="/admin/products/index.php">Управлять</a>
 <a href="/login.php">Войти</a>
+<a href="/basket.php">Корзина</a>
 <h1>Каталог</h1>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
     <?php

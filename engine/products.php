@@ -41,3 +41,26 @@ function createProduct(array $data) {
 
     return execute($sql);
 }
+
+function add_to_basket($id, $quantity){
+    $sql = "select name, price from products 
+            where id = '{$id}'";
+    $item = queryOne($sql);
+    $sumPrice = $item['price'] * $quantity;
+    session_start();
+    if (isset($_SESSION["cart_item_{$id}"]['id'])){
+        if ($item) {
+            $_SESSION["cart_item_{$id}"]['id'] += $id;
+            $_SESSION["cart_item_{$id}"]['name'] = $item['name'];
+            $_SESSION["cart_item_{$id}"]['price'] = $item['price'];
+            $_SESSION["cart_item_{$id}"]['quantity'] += $quantity;
+            $_SESSION["cart_item_{$id}"]['sumPrice'] = $sumPrice + ($sumPrice * $quantity);
+        }
+    } else {
+        $_SESSION["cart_item_{$id}"]['id'] = $id;
+        $_SESSION["cart_item_{$id}"]['name'] = $item['name'];
+        $_SESSION["cart_item_{$id}"]['price'] = $item['price'];
+        $_SESSION["cart_item_{$id}"]['quantity'] = $quantity;
+        $_SESSION["cart_item_{$id}"]['sumPrice'] = $sumPrice;
+    }
+}
