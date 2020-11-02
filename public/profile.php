@@ -5,3 +5,4 @@ session_start();
 <a href="/admin/products/index.php">Управлять</a>
 <a href="/index.php">Главная</a>
 <a href="/basket.php">Корзина</a>
+

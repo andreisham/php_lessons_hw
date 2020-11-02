@@ -27,3 +27,4 @@ foreach ($reviews as $review):
     <textarea name="text" cols="30" rows="10"></textarea>
     <input type="submit" style="display: block;">
 </form>
+
