@@ -1,6 +1,8 @@
 <h1><?=$info['name'] ?></h1>
 <img src="/img/<?=$info['path'] ?>" alt="" width="400px">
 <p><?=$info['full_description']?></p>
+<p>Цена: <?=$info['price']?> руб.</p>
+В корзину
 <a href="/index.php">Go back</a>
 
 <h2>Резцензии</h2>

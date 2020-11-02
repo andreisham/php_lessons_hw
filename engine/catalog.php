@@ -3,15 +3,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../config/main.php";
 require_once ENGINE_DIR . "db.php";
 
 function getCatalogInfo(){
-    return queryAll("select product_images.id, path, product_images.name, p.description, p.full_description from product_images
-                            join products p on product_images.product_id = p.id");
+    return queryAll("select p.id, pi.path, p.name, p.description, p.full_description from products p
+                         join product_images pi on p.id = pi.product_id");
 }
 
 function getCatalogInfoByID($id){
-    return queryOne("select product_images.id, path, product_images.name, p.description, p.full_description, r.author, r.text, r.created_at from product_images
-                            join products p on product_images.product_id = p.id
-                            join reviews r on p.id = r.product_id 
-                        where product_images.id = {$id}");
+    return queryOne("select p.id, pi.path, p.name, p.description, p.full_description, p.price from products p
+                         join product_images pi on p.id = pi.product_id
+                         left join reviews r on p.id = r.product_id 
+                        where p.id = {$id}");
 }
 
 function addReview(int $product_id, string $author, string $text) {

@@ -14,6 +14,6 @@ function incrementImageViews(int $id) {
     return execute("update photos set views = views + 1 where id = {$id}");
 }
 
-function addImage(string $name, string $path) {
-   return execute("insert into photos(name, path) values ('{$name}','$path')");
+function addImage(string $path) {
+   return execute("insert into photos(path) values ('$path')");
 }

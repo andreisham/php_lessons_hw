@@ -7,18 +7,15 @@ require_once ENGINE_DIR . "base.php";
 
 
 $id = (int)get('id');
-
 $info = getCatalogInfoByID($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $author = post("author");
-    var_dump($author);
     $text = post("text");
     addReview($id, $author, $text);
 }
 
 $reviews = getReview($id);
-
 include VIEWS_DIR . "product.php";
 ?>
 
