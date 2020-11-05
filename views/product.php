@@ -1,6 +1,12 @@
 <h1><?=$info['name'] ?></h1>
 <img src="/img/<?=$info['path'] ?>" alt="" width="400px">
 <p><?=$info['full_description']?></p>
+<p>Цена: <?=$info['price']?> руб.</p>
+<form action="/basket.php" method="post">
+    <input type="hidden" value="<?=$info['id'] ?>" name="id">
+    Количество: <input type="number" name="quantity">
+    <input type="submit" value="В корзину">
+</form>
 <a href="/index.php">Go back</a>
 
 <h2>Резцензии</h2>
@@ -21,3 +27,4 @@ foreach ($reviews as $review):
     <textarea name="text" cols="30" rows="10"></textarea>
     <input type="submit" style="display: block;">
 </form>
+
