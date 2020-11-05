@@ -6,7 +6,7 @@ require_once ENGINE_DIR . "files.php";
 session_start();
 
 if(!isset($_SESSION['user_id'])) {
-    redirect('/login.php');
+    redirect('/index.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

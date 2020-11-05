@@ -5,8 +5,8 @@ require ENGINE_DIR . "products.php";
 session_start();
 
 if(!isset($_SESSION['user_id'])) {
-    redirect('/login.php');
+    redirect('/index.php');
 }
 
-$products = getAllProducts();
+$products = getProducts();
 include VIEWS_DIR . 'admin/products/index.php';
