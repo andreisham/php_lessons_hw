@@ -1,10 +1,4 @@
 <?php
-// страница товара
-
-require_once $_SERVER['DOCUMENT_ROOT'] . "/../config/main.php";
-require_once ENGINE_DIR . "catalog.php";
-require_once ENGINE_DIR . "base.php";
-
 
 $id = (int)get('id');
 $info = getCatalogInfoByID($id);
@@ -16,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $reviews = getReview($id);
-include VIEWS_DIR . "product.php";
+$info['reviews'] = $reviews;
+
+echo render('product', ['info' => $info]);
 ?>
 

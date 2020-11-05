@@ -20,3 +20,4 @@ function redirect(string $url) {
 function hashPassword(string $string) {
     return md5($string . 'd5f8');
 }
+

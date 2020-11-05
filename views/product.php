@@ -2,16 +2,42 @@
 <img src="/img/<?=$info['path'] ?>" alt="" width="400px">
 <p><?=$info['full_description']?></p>
 <p>Цена: <?=$info['price']?> руб.</p>
-<form action="/basket.php" method="post">
-    <input type="hidden" value="<?=$info['id'] ?>" name="id">
-    Количество: <input type="number" name="quantity">
-    <input type="submit" value="В корзину">
-</form>
-<a href="/index.php">Go back</a>
+
+
+
+    Количество: <input id="qty_input" type="number" name="quantity">
+    <input data-id="<?=$info['id']?>" id="add_to_card" type="submit" value="В корзину">
+
+<script>
+
+    $(function () {
+        $("#add_to_card").on('click', function () {
+            var id = $(this).data('id');
+            var qty = $("#qty_input").val();
+            console.log(id);
+            console.log(qty);
+
+            $.ajax({
+                url : "/basket/add",
+                type: "POST",
+                data: {
+                    id: id,
+                    quantity: qty
+                },
+                success : function (response) {
+                    response = JSON.parse(response);
+                    if(response.status == 'success'){
+                        alert(response.message)
+                    }
+                }
+            })
+        })
+    })
+</script>
 
 <h2>Резцензии</h2>
 <?php
-foreach ($reviews as $review):
+foreach ($info['reviews'] as $review):
     ?>
     <div>
         <h2><?=$review['author']?></h2>
