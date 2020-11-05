@@ -25,4 +25,3 @@
     <input type="submit" value="<?=is_null($product)? 'Создать' : 'Редактировать'?>">
 </form>
 
-<a href="../../index.php">На главную</a>

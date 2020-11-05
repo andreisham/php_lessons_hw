@@ -15,13 +15,13 @@
         <td>Количество</td>
         <td>Итог</td>
     </tr>
-    <?php foreach ($_SESSION as $item): ?>
+    <?php foreach ($basket as $item): ?>
         <tr>
             <td>
-                <p> <?= $item['name'] ?> </p>
+                <p> <?= $item['product']['name'] ?> </p>
             </td>
             <td>
-                <p> <?= $item['price'] ?> </p>
+                <p> <?= $item['product']['price'] ?> </p>
             </td>
             <td>
                 <p> <?= $item['quantity'] ?> </p>
@@ -30,10 +30,9 @@
                 <p> <?= $item['sumPrice'] ?> </p>
             </td>
             <td>
+<!--                форма удаления и изменения количества-->
                 <p> <?= $item['sumPrice'] ?> </p>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
-
-<a href="/">На главную</a>
