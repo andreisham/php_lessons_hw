@@ -1,5 +1,4 @@
 <?php
-
 $basket = [];
 if (!empty($_SESSION['cart_item'])) {
     $prodIds = array_filter(
@@ -16,4 +15,5 @@ if (!empty($_SESSION['cart_item'])) {
         ];
     }
 }
+var_dump($_SESSION);
 echo render('basket', ['basket' => $basket]);
