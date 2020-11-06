@@ -52,5 +52,7 @@
 </table>
 
 <form action="basket/checkout" method="post">
+    <input type="text" name="adress" placeholder="Адрес доставки">
+    <input type="text" name="phone" placeholder="Телефон">
     <input type="submit" value="Оформить заказ" name="checkout">
 </form>
