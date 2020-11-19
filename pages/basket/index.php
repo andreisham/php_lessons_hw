@@ -1,12 +1,7 @@
 <?php
-
 $basket = [];
 if (!empty($_SESSION['cart_item'])) {
-    $prodIds = array_filter(
-        array_keys($_SESSION['cart_item']),
-        function ($el){return is_int($el);}
-    );
-    $products = getProducts($prodIds);
+    $products = getProducts(fullBasket());
     foreach ($products as $product) {
         $sumPrice = $_SESSION['cart_item'][$product['id']] * $product['price'];
         $basket[] = [
@@ -16,4 +11,5 @@ if (!empty($_SESSION['cart_item'])) {
         ];
     }
 }
+
 echo render('basket', ['basket' => $basket]);

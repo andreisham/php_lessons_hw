@@ -18,7 +18,7 @@
             console.log(qty);
 
             $.ajax({
-                url : "/basket/add",
+                url : "/basket/edit",
                 type: "POST",
                 data: {
                     id: id,

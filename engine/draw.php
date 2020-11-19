@@ -12,6 +12,10 @@ function drawMenu() {
         [
             'label' => 'Админка',
             'link' => '/admin'
+        ],
+        [
+            'label' => 'Личный кабинет',
+            'link' => 'login/profile'
         ]
     ];
 
